@@ -10,7 +10,6 @@ import UpdateProfileDialog from "./UpdateProfileDialog";
 import { useSelector } from "react-redux";
 import useGetAppliedJobs from "@/hooks/useGetAppliedJobs";
 
-// const skills = ["Html", "Css", "Javascript", "Reactjs"]
 const isResume = true;
 
 const Profile = () => {
@@ -22,7 +21,7 @@ const Profile = () => {
     <div>
       <Navbar />
       <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl my-5 p-8">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row justify-between">
           <div className="flex items-center gap-4">
             <Avatar className="h-24 w-24">
               <AvatarImage
@@ -37,7 +36,7 @@ const Profile = () => {
           </div>
           <Button
             onClick={() => setOpen(true)}
-            className="text-right"
+            className="text-right mt-4 md:mt-0"
             variant="outline"
           >
             <Pen />
@@ -54,8 +53,8 @@ const Profile = () => {
           </div>
         </div>
         <div className="my-5">
-          <h1>Skills</h1>
-          <div className="flex items-center gap-1">
+          <h1 className="text-lg font-bold">Skills</h1>
+          <div className="flex flex-wrap items-center gap-1">
             {user?.profile?.skills.length !== 0 ? (
               user?.profile?.skills.map((item, index) => (
                 <Badge key={index}>{item}</Badge>
@@ -80,9 +79,9 @@ const Profile = () => {
           )}
         </div>
       </div>
-      <div className="max-w-4xl mx-auto bg-white rounded-2xl">
+      <div className="max-w-4xl mx-auto bg-white rounded-2xl my-5 p-5">
         <h1 className="font-bold text-lg my-5">Applied Jobs</h1>
-        {/* Applied Job Table   */}
+        {/* Applied Job Table */}
         <AppliedJobTable />
       </div>
       <UpdateProfileDialog open={open} setOpen={setOpen} />
