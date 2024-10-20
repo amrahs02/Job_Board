@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Avatar, AvatarImage } from "../ui/avatar";
@@ -15,6 +15,7 @@ const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const logoutHandler = async () => {
     try {
@@ -33,15 +34,62 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r mx-2 rounded-2xl  from-green-400 to-green-500 shadow-lg sticky top-0 z-10">
-      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-6 md:px-8">
-        <h1 className="text-3xl font-bold text-white transition duration-200 hover:underline">
+    <nav className="bg-gradient-to-r mx-2 rounded-2xl from-green-400 to-green-500 shadow-lg sticky top-0 z-10">
+      <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4 md:px-8">
+        {/* Logo */}
+        <h1 className="text-2xl md:text-3xl font-bold text-white transition duration-200 hover:underline">
           <Link to="/">
             Job<span className="text-blue-600">Board</span>
           </Link>
         </h1>
-        <div className="flex items-center gap-6">
-          <ul className="flex font-medium items-center gap-8 text-white">
+
+        {/* Toggle Button for mobile */}
+        <div className="md:hidden flex items-center">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none"
+          >
+            {menuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Menu Items */}
+        <div
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } md:flex flex-col md:flex-row items-center gap-6 mt-52 bg-green-500 p-3 rounded-2xl md:mt-0 text-white w-full md:w-auto`}
+        >
+          <ul className="flex flex-col md:flex-row font-medium items-start gap-6 p-1 md:gap-4 w-full md:w-auto sm:bg-none bg-green-500 md:bg-transparent py-4 md:py-0">
             {user && user.role === "recruiter" ? (
               <>
                 <li className="flex items-center transition-colors duration-200 hover:text-yellow-300">
@@ -71,8 +119,9 @@ const Navbar = () => {
             )}
           </ul>
 
+          {/* Authentication Buttons */}
           {!user ? (
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col md:flex-row items-center gap-4">
               <Link to="/login">
                 <Button
                   variant="outline"
