@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 const corsOptions = {
-    origin:["http://localhost:3000","https://jobboard-81hq.onrender.com"],
+    origin: 'https://jobboard-81hq.onrender.com',
     credentials:true
 }
 app.use(cors(corsOptions));
