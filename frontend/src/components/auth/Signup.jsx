@@ -70,9 +70,9 @@ const Signup = () => {
   }, [user, navigate]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen   flex flex-col ">
       <Navbar />
-      <div className="flex items-center justify-center flex-1">
+      <div className="flex mx-2 rounded-2xl bg-red-400    items-center justify-center flex-1">
         <form
           onSubmit={submitHandler}
           className="w-full sm:max-w-xl max-w-md rounded-2xl shadow-md p-10 bg-white"

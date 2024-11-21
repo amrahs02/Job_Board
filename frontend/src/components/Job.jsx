@@ -16,56 +16,65 @@ const Job = ({ job }) => {
   };
 
   return (
-    <div className="p-5 rounded-lg shadow-xl bg-white border border-gray-100">
-      <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-500">
-          {daysAgoFunction(job?.createdAt) === 0
-            ? "Today"
-            : `${daysAgoFunction(job?.createdAt)} days ago`}
-        </p>
-        <Button variant="outline" className="rounded-full" size="icon">
-          <Bookmark />
-        </Button>
-      </div>
+    <div className="flex flex-col p-8 rounded-xl shadow-lg bg-white  border-gray-300 border  cursor-pointer hover:shadow-xl transition-shadow duration-300">
+      {/* Job Time */}
+      <div className="flex justify-between mb-4"></div>
 
-      <div className="flex items-center gap-2 my-2">
-        <Button className="p-1" variant="outline" size="icon">
+      {/* Company Information */}
+      <div className=" flex justify-between items-start ">
+        <div className="flex items-center  mb-6" >
+
+        <Button className="rounded-full aspect-square mr-4">
           <Avatar>
             <AvatarImage src={job?.company?.logo} />
           </Avatar>
         </Button>
+
         <div>
-          <h1 className="font-medium text-lg">{job?.company?.name}</h1>
+          <h1 className="font-semibold text-xl text-gray-800">
+            {job?.company?.name}
+          </h1>
           <p className="text-sm text-gray-500">India</p>
         </div>
+        </div>
+        <p className="text-xs text-gray-500">
+          {daysAgoFunction(job?.createdAt) === 0
+            ? "Posted Today"
+            : `${daysAgoFunction(job?.createdAt)} days ago`}
+        </p>
       </div>
 
-      <div>
-        <h1 className="font-bold text-lg my-2">{job?.title}</h1>
-        <p className="text-sm text-gray-600">{job?.description}</p>
+      {/* Job Title and Description */}
+      <div className="mb-4">
+        <h2 className="font-bold text-2xl text-gray-900">{job?.title}</h2>
+        <p className="text-sm text-gray-600 leading-relaxed mt-2 line-clamp-3">
+          {job?.description}
+        </p>
       </div>
-      
-      <div className="flex flex-wrap gap-2 mt-4">
-        <Badge className={"text-blue-700 font-bold"} variant="ghost">
+
+      {/* Badges */}
+      <div className="flex flex-wrap gap-3 mt-auto">
+        <Badge className="text-blue-600 bg-blue-100 font-medium px-3 py-1 rounded-full">
           {job?.position} Positions
         </Badge>
-        <Badge className={"text-[#F83002] font-bold"} variant="ghost">
+        <Badge className="text-red-600 bg-red-100 font-medium px-3 py-1 rounded-full">
           {job?.jobType}
         </Badge>
-        <Badge className={"text-[#7209b7] font-bold"} variant="ghost">
+        <Badge className="text-purple-600 bg-purple-100 font-medium px-3 py-1 rounded-full">
           {job?.salary} LPA
         </Badge>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
+      {/* Action Buttons */}
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-6">
         <Button
           onClick={() => navigate(`/description/${job?._id}`)}
           variant="outline"
-          className="flex-1"
+          className="flex-1 rounded-full text-gray-700 border-gray-300 hover:bg-gray-100"
         >
           Details
         </Button>
-        <Button className="bg-[#7209b7] flex-1 sm:flex-none">Save For Later</Button>
+       
       </div>
     </div>
   );

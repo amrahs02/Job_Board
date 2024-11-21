@@ -8,12 +8,13 @@ const LatestJobs = () => {
   const { allJobs } = useSelector((store) => store.job);
 
   return (
-    <div className="max-w-7xl mx-auto my-20">
-      <h1 className="text-4xl m-3 font-bold">
-        <span className="text-[#a977ff]">Latest & Top </span>
-        <span className="text-white">Job Openings</span>
+    <div className=" flex flex-col bg-white  mx-2 rounded-2xl justify-center items-center">
+      <h1 className="text-6xl font-bold">
+        <span className=" bg-gradient-to-r w-fit from-red-500 text-center   via-green-500 to-blue-500 bg-clip-text text-transparent ">
+          Latest & TopJob Openings
+        </span>
       </h1>
-      <div className="grid  sm:grid-cols-3 grid-cols-1 gap-4 sm:my-5 m-2">
+      <div className="grid  w-3/4  sm:grid-cols-3 grid-cols-1 gap-4 my-24">
         {allJobs.length <= 0 ? (
           <span>No Job Available</span>
         ) : (

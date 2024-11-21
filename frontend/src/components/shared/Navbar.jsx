@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Avatar, AvatarImage } from "../ui/avatar";
 import { LogOut, User2 } from "lucide-react";
-import { FaHome, FaBriefcase, FaThList } from "react-icons/fa";
+import { FaBriefcase, FaThList } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
@@ -34,24 +34,25 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gradient-to-r mx-2 rounded-2xl from-green-400 to-green-500 shadow-lg sticky top-0 z-10">
+    <nav className="rounded-2xl mx-2 bg-white  sticky ">
       <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4 md:px-8">
         {/* Logo */}
-        <h1 className="text-2xl md:text-3xl font-bold text-white transition duration-200 hover:underline">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-700 transition duration-200 hover:underline">
           <Link to="/">
             Job<span className="text-blue-600">Board</span>
           </Link>
         </h1>
 
-        {/* Toggle Button for mobile */}
+        {/* Toggle Button for mobile the ac */}
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white focus:outline-none"
+            className="text-gray-700 focus:outline-none"
           >
             {menuOpen ? (
+            //  cross button 
               <svg
-                className="w-6 h-6"
+                className="w-6 h-6 "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -65,6 +66,7 @@ const Navbar = () => {
                 />
               </svg>
             ) : (
+              // menu button 
               <svg
                 className="w-6 h-6"
                 fill="none"
@@ -87,33 +89,28 @@ const Navbar = () => {
         <div
           className={`${
             menuOpen ? "block" : "hidden"
-          } md:flex flex-col md:flex-row items-center gap-6 mt-52 bg-green-500 p-3 rounded-2xl md:mt-0 text-white w-full md:w-auto`}
+          } md:flex flex-col md:flex-row items-center gap-6 mt-52  p-3 rounded-2xl md:mt-0 text-gray-700 w-full md:w-auto`}
         >
-          <ul className="flex flex-col md:flex-row font-medium items-start gap-6 p-1 md:gap-4 w-full md:w-auto sm:bg-none bg-green-500 md:bg-transparent py-4 md:py-0">
+          <ul className="flex flex-col md:flex-row font-medium items-start gap-6 p-1 md:gap-4 w-full md:w-auto sm:bg-none md:bg-transparent py-4 md:py-0">
             {user && user.role === "recruiter" ? (
               <>
-                <li className="flex items-center transition-colors duration-200 hover:text-yellow-300">
-                  <FaThList className="mr-1" />
+                <li className="flex items-center transition-colors duration-200  bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/admin/companies">Companies</Link>
                 </li>
-                <li className="flex items-center transition-colors duration-200 hover:text-yellow-300">
-                  <FaBriefcase className="mr-1" />
+                <li className="flex items-center transition-colors duration-200  bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/admin/jobs">Jobs</Link>
                 </li>
               </>
             ) : (
               <>
-                <li className="flex items-center transition-colors duration-200 hover:text-yellow-300">
-                  <FaHome className="mr-1" />
+                <li className="flex items-center transition-colors duration-200 bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/">Home</Link>
                 </li>
-                <li className="flex items-center transition-colors duration-200 hover:text-yellow-300">
-                  <FaBriefcase className="mr-1" />
+                <li className="flex items-center transition-colors duration-200 bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/jobs">Jobs</Link>
                 </li>
-                <li className="flex items-center transition-colors duration-200 hover:text-yellow-300">
-                  <FaThList className="mr-1" />
-                  <Link to="/browse">Browse</Link>
+                <li className="flex items-center transition-colors duration-200 bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
+                  <Link to="/browse">Explore Jobs</Link>
                 </li>
               </>
             )}
@@ -121,17 +118,17 @@ const Navbar = () => {
 
           {/* Authentication Buttons */}
           {!user ? (
-            <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="flex flex-col md:flex-row">
               <Link to="/login">
                 <Button
                   variant="outline"
-                  className="text-blue-600 border-white rounded-full hover:bg-white hover:text-blue-600 transition duration-200"
+                  className=" bg-blue-200 mr-2 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300 transition duration-200"
                 >
                   Login
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-white text-blue-600 rounded-full px-6 hover:bg-blue-200 transition duration-200">
+                <Button className=" bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300transition duration-200">
                   Signup
                 </Button>
               </Link>
@@ -139,7 +136,7 @@ const Navbar = () => {
           ) : (
             <Popover>
               <PopoverTrigger asChild>
-                <Avatar className="cursor-pointer border-2 border-white transition-transform duration-200 transform hover:scale-110">
+                <Avatar className="cursor-pointer border border-white transition-transform duration-200 transform hover:scale-110">
                   <AvatarImage
                     src={user?.profile?.profilePhoto}
                     alt={user?.fullname}

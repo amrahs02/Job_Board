@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 rounded-t-3xl text-white py-4">
+    <footer className="bg-white rounded-t-3xl text-gray-700 py-4">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-2 md:mb-0">
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-2 text-center text-sm opacity-80">
-          <p className="text-gray-100" >
+          <p className="text-gray-700" >
             Designed and Developed by{" "}
             <a
               href="https://amrahs.vercel.app"

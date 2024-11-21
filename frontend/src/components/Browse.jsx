@@ -19,11 +19,11 @@ const Browse = () => {
   return (
     <div>
       <Navbar />
-      <div className="max-w-7xl mx-auto my-10">
+      <div className="w-3/4 border border-gray-200 rounded-2xl m-5 mx-auto">
         <h1 className="font-bold text-xl my-10">
           Search Results ({allJobs.length})
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2  m-5 lg:grid-cols-3 gap-4">
           {allJobs.map((job) => (
             <Job key={job._id} job={job} />
           ))}

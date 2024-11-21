@@ -36,9 +36,13 @@ const Profile = () => {
           </div>
           <Button
             onClick={() => setOpen(true)}
-            className="text-right mt-4 md:mt-0"
+            className="text-right rounded-full border border-blue-800 bg-blue-300 text-blue-600 hover:bg-blue-400 font-bold  mt-4 md:mt-0"
             variant="outline"
           >
+            <span className="mx-2">
+            Edit Profile
+
+            </span>
             <Pen />
           </Button>
         </div>
