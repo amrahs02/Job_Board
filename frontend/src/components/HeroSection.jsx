@@ -19,9 +19,9 @@ const HeroSection = () => {
     <div className="h-screen flex bg-white rounded-2xl mx-2 mt-2 flex-col justify-center items-center  overflow-hidden">
       {/* Background Overlay */}
       <div className="absolute bg-gradient-to-b  shadow-lg opacity-50" />
-      <div className="bg-gradient-to-r from-teal-500 from-30%  via-lime-500 to-blue-500 to-70% bg-clip-text text-transparent  flex flex-row justify-center items-center w-full md:w-1/2 gap-6 z-10">
+      <div className="bg-gradient-to-r  from-red-500 text-center   via-green-500 to-blue-500 bg-clip-text text-transparent  flex flex-row justify-center items-center w-full md:w-1/2 gap-6 z-10">
         <div className=" ">
-          <div className="text-7xl mb-6 font-extrabold text-center">
+          <div className="sm:text-7xl text-6xl mb-6 font-extrabold text-center">
             Search, Apply & Get Your <br />
             Dream Job
           </div>

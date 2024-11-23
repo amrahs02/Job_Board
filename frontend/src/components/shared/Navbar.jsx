@@ -52,7 +52,7 @@ const Navbar = () => {
             {menuOpen ? (
             //  cross button 
               <svg
-                className="w-6 h-6 "
+                className="w-6 bg-blue-500 text-gray-100 m-3 z-10 rounded-full h-6 "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -87,11 +87,9 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <div
-          className={`${
-            menuOpen ? "block" : "hidden"
-          } md:flex flex-col md:flex-row items-center gap-6 mt-52  p-3 rounded-2xl md:mt-0 text-gray-700 w-full md:w-auto`}
+          className={`${ menuOpen ? "block" : "hidden" } md:flex flex-col md:flex-row items-center bg-blue-300 sm:bg-opacity-0 bg-opacity-80 gap-6 mt-52  p-3 rounded-2xl md:mt-0 text-gray-700 w-fit md:w-auto`}
         >
-          <ul className="flex flex-col md:flex-row font-medium items-start gap-6 p-1 md:gap-4 w-full md:w-auto sm:bg-none md:bg-transparent py-4 md:py-0">
+          <ul className="flex flex-col md:flex-row font-medium items-start gap-4 md:gap-4 w-full md:w-auto sm:bg-none md:bg-transparent py-4 md:py-0">
             {user && user.role === "recruiter" ? (
               <>
                 <li className="flex items-center transition-colors duration-200  bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
@@ -103,13 +101,13 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <li className="flex items-center transition-colors duration-200 bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
+                <li className="flex items-center transition-colors duration-200  text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/">Home</Link>
                 </li>
-                <li className="flex items-center transition-colors duration-200 bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
+                <li className="flex items-center transition-colors duration-200  text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/jobs">Jobs</Link>
                 </li>
-                <li className="flex items-center transition-colors duration-200 bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
+                <li className="flex items-center transition-colors duration-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300">
                   <Link to="/browse">Explore Jobs</Link>
                 </li>
               </>
@@ -122,13 +120,13 @@ const Navbar = () => {
               <Link to="/login">
                 <Button
                   variant="outline"
-                  className=" bg-blue-200 mr-2 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300 transition duration-200"
+                  className=" bg-blue-500 mr-2 mb-2  text-gray-100 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300 transition duration-200"
                 >
                   Login
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className=" bg-blue-200 text-blue-600 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300transition duration-200">
+                <Button className=" bg-blue-500 text-gray-100 rounded-full px-4  hover:text-blue-700 hover:bg-blue-300transition duration-200">
                   Signup
                 </Button>
               </Link>
