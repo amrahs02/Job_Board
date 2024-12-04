@@ -21,39 +21,36 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="flex space-x-4 mt-2 md:mt-0">
+          <div className="flex text-gray-300 space-x-4 mt-2 md:mt-0">
             <a
               href="https://github.com/amrahs02"
-              className="text-gray-100 hover:text-white"
               aria-label="GitHub
                         "
               target="_blank"
             >
-              <FaGithub />
+              <FaGithub color="black" />
             </a>
             <a
               href="https://twitter.com/amrahs02"
-              className="text-gray-100 hover:text-white"
               aria-label="Twitter"
               target="_blank"
             >
               {/* //twitter icons from react-icons */}
 
-              <FaTwitter />
+              <FaTwitter color="black"  />
             </a>
             <a
               href="https://linkedin.com/in/sandeepsharma2183"
-              className="text-gray-100 hover:text-white"
               aria-label="LinkedIn"
               target="_blank"
             >
-              <FaLinkedinIn />
+              <FaLinkedinIn color="black" />
             </a>
           </div>
         </div>
 
         <div className="mt-2 text-center text-sm opacity-80">
-          <p className="text-gray-700" >
+          <p className="text-gray-800" >
             Designed and Developed by{" "}
             <a
               href="https://amrahs.vercel.app"

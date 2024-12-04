@@ -11,6 +11,7 @@ import { USER_API_END_POINT } from "@/utils/constant";
 import { setUser } from "@/redux/authSlice";
 import { toast } from "sonner";
 
+
 const Navbar = () => {
   const { user } = useSelector((store) => store.auth);
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="rounded-2xl mx-2 bg-white  sticky ">
+    <nav className="rounded-2xl mx-2 bg-white z-10  sticky ">
       <div className="flex items-center justify-between mx-auto max-w-7xl h-16 px-4 md:px-8">
         {/* Logo */}
         <h1 className="text-2xl md:text-3xl font-bold text-gray-700 transition duration-200 hover:underline">
@@ -47,12 +48,12 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-gray-700 focus:outline-none"
+            className="text-gray-700 justify-center absolute right-3 top-3 flex items-center focus:outline-none"
           >
             {menuOpen ? (
             //  cross button 
               <svg
-                className="w-6 bg-blue-500 text-gray-100 m-3 z-10 rounded-full h-6 "
+                className="w-7 bg-blue-500 text-gray-100 m-3 z-10 rounded-full h-7 "
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -68,7 +69,7 @@ const Navbar = () => {
             ) : (
               // menu button 
               <svg
-                className="w-6 h-6"
+                className="w-8 text-blue-500 h-8"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -87,7 +88,7 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <div
-          className={`${ menuOpen ? "block" : "hidden" } md:flex flex-col md:flex-row items-center bg-blue-300 sm:bg-opacity-0 bg-opacity-80 gap-6 mt-52  p-3 rounded-2xl md:mt-0 text-gray-700 w-fit md:w-auto`}
+          className={`${ menuOpen ? "block" : "hidden" } w-fit mt-52 md:flex flex-col md:flex-row items-center bg-blue-300 sm:bg-opacity-0 bg-opacity-80 gap-6 duration-300 transition-colors   p-3 rounded-2xl md:mt-0 text-gray-700 md:w-auto`}
         >
           <ul className="flex flex-col md:flex-row font-medium items-start gap-4 md:gap-4 w-full md:w-auto sm:bg-none md:bg-transparent py-4 md:py-0">
             {user && user.role === "recruiter" ? (

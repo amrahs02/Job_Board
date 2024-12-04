@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { Search } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { setSearchedQuery } from "@/redux/jobSlice";
+import background from "../assets/background1.jpg";
 import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
@@ -16,10 +17,10 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="h-screen flex bg-white rounded-2xl mx-2 mt-2 flex-col justify-center items-center  overflow-hidden">
+    <div src={background} className="h-screen flex bg-white rounded-2xl mx-2 mt-2 flex-col justify-center items-center  overflow-hidden">
       {/* Background Overlay */}
       <div className="absolute bg-gradient-to-b  shadow-lg opacity-50" />
-      <div className="bg-gradient-to-r  from-red-500 text-center   via-green-500 to-blue-500 bg-clip-text text-transparent  flex flex-row justify-center items-center w-full md:w-1/2 gap-6 z-10">
+      <div className="bg-gradient-to-r  from-red-500 text-center   via-green-500 to-blue-500 bg-clip-text text-transparent  flex flex-row justify-center items-center w-full md:w-1/2 gap-6">
         <div className=" ">
           <div className="sm:text-7xl text-6xl mb-6 font-extrabold text-center">
             Search, Apply & Get Your <br />
