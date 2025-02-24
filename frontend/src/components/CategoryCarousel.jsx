@@ -1,15 +1,9 @@
 import React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "./ui/carousel";
 import { Button } from "./ui/button";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { setSearchedQuery } from "@/redux/jobSlice";
+import { motion } from "framer-motion"; // Import Framer Motion for animations
 
 const category = [
   "Frontend Developer",
@@ -17,9 +11,10 @@ const category = [
   "Data Science",
   "Graphic Designer",
   "FullStack Developer",
+  "Firmware Engineer",
 ];
 
-const CategoryCarousel = () => {
+const CategoryCards = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -28,40 +23,94 @@ const CategoryCarousel = () => {
     navigate("/browse");
   };
 
+  // Button size and style constants for symmetry
+  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
+
+  // Animation variants for Framer Motion
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  const cardHoverVariants = {
+    initial: { 
+      scale: 1, 
+      rotate: 0, 
+      boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" 
+    },
+    hover: { 
+      scale: 1.05, 
+      rotate: 2, // Slight tilt on hover, mimicking 3D effect
+      boxShadow: "0 8px 15px rgba(0, 0, 0, 0.2)",
+      transition: { 
+        duration: 0.3, 
+        ease: "easeInOut" 
+      },
+    },
+  };
+
+  const cardTapVariants = {
+    tap: { 
+      scale: 0.98, 
+      rotate: -1, 
+      transition: { 
+        duration: 0.1, 
+        ease: "easeInOut" 
+      },
+    },
+  };
+
   return (
-    <div className="py-12 bg-yellow-50">
+    <motion.div 
+      className="py-12 bg-yellow-50 bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.1%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
+      initial="hidden"
+      animate="visible"
+      variants={fadeInVariants}
+    >
       <div className="max-w-5xl mx-auto px-4 relative">
         {/* Header Tag - Mimicking "Job Portal" */}
         <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
           Job Categories
         </div>
 
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <motion.h2 
+          className="text-6xl font-bold text-center mb-8 bg-gradient-to-r from-green-500 via-yellow-400 to-green-600 bg-clip-text text-transparent"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInVariants}
+        >
           Explore Job Categories
-        </h2>
-        <Carousel className="w-full">
-          <CarouselContent className="-ml-2">
-            {category.map((cat, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-2 basis-full sm:basis-1/2 md:basis-1/3"
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {category.map((cat, index) => (
+            <motion.div
+              key={index}
+              className="bg-white rounded-3xl p-6 border border-green-300 shadow-md transform -translate-y-2 hover:shadow-xl transition-all duration-300"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: {
+                  transition: {
+                    delay: index * 0.2, // Stagger animation for each card
+                  },
+                },
+              }}
+              variants={cardHoverVariants}
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <Button
+                onClick={() => searchJobHandler(cat)}
+                className={buttonClasses.replace("bg-green-500", "bg-white").replace("hover:bg-green-600", "hover:bg-green-100").replace("text-white", "text-gray-700")}
               >
-                <Button
-                  onClick={() => searchJobHandler(cat)}
-                  variant="outline"
-                  className="w-full h-24 text-gray-700 text-sm font-medium bg-white border-gray-200 rounded-full shadow-md hover:bg-green-100 hover:text-green-600 transition-all duration-200"
-                >
-                  {cat}
-                </Button>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="left-0 bg-white text-gray-600 hover:text-gray-800 hover:bg-gray-100" />
-          <CarouselNext className="right-0 bg-white text-gray-600 hover:text-gray-800 hover:bg-gray-100" />
-        </Carousel>
+                {cat}
+              </Button>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default CategoryCarousel;
+export default CategoryCards;

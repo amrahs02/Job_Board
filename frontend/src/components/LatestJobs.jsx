@@ -1,29 +1,57 @@
 import React from "react";
 import LatestJobCards from "./LatestJobCards";
 import { useSelector } from "react-redux";
-
-// const randomJobs = [1, 2, 3, 4, 5, 6, 7, 8];
+import { motion } from "framer-motion"; // Import Framer Motion for animations
 
 const LatestJobs = () => {
   const { allJobs } = useSelector((store) => store.job);
 
+  // Animation variants for Framer Motion
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <div className=" flex flex-col bg-white  mx-2 rounded-2xl justify-center items-center">
-      <h1 className="text-6xl font-bold">
-        <span className=" bg-gradient-to-r w-fit from-red-500 text-center   via-green-500 to-blue-500 bg-clip-text text-transparent ">
-          Latest & TopJob Openings
-        </span>
-      </h1>
-      <div className="grid  w-3/4  sm:grid-cols-3 grid-cols-1 gap-4 my-24">
+    <motion.div 
+      className="flex flex-col bg-yellow-50 mx-1 rounded-3xl p-6 shadow-md justify-center items-center bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.1%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
+      initial="hidden"
+      animate="visible"
+      variants={fadeInVariants}
+    >
+      {/* Header Tag - Mimicking "Job Categories" */}
+      <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
+        Latest Jobs
+      </div>
+
+      <motion.h1 
+        className="text-6xl font-bold text-center mb-8 bg-gradient-to-r from-green-500 via-yellow-400 to-green-600 bg-clip-text text-transparent"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInVariants}
+      >
+        Latest & Top Job Openings
+      </motion.h1>
+      <div className="grid w-3/4 sm:grid-cols-3 grid-cols-1 gap-4 my-24">
         {allJobs.length <= 0 ? (
-          <span>No Job Available</span>
+          <span className="text-gray-600 text-center">No Job Available</span>
         ) : (
           allJobs
             ?.slice(0, 6)
-            .map((job) => <LatestJobCards key={job._id} job={job} />)
+            .map((job) => (
+              <motion.div
+                key={job._id}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.3 }}
+              >
+                <LatestJobCards job={job} />
+              </motion.div>
+            ))
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
