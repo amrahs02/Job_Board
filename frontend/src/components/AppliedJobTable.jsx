@@ -1,37 +1,64 @@
-import React from 'react'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/table'
-import { Badge } from './ui/badge'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
+import { Badge } from './ui/badge';
+import { useSelector } from 'react-redux';
 
 const AppliedJobTable = () => {
-    const {allAppliedJobs} = useSelector(store=>store.job);
+    const { allAppliedJobs } = useSelector(store => store.job);
+
     return (
-        <div>
+        <div className="bg-gray-50 rounded-lg shadow-sm p-4">
             <Table>
-                <TableCaption>A list of your applied jobs</TableCaption>
+                <TableCaption className="text-gray-500 text-sm mb-4">
+                    Your applied jobs
+                </TableCaption>
                 <TableHeader>
-                    <TableRow>
-                        <TableHead>Date</TableHead>
-                        <TableHead>Job Role</TableHead>
-                        <TableHead>Company</TableHead>
-                        <TableHead className="text-right">Status</TableHead>
+                    <TableRow className="border-b border-gray-200">
+                        <TableHead className="text-gray-600 font-medium">Date</TableHead>
+                        <TableHead className="text-gray-600 font-medium">Job Role</TableHead>
+                        <TableHead className="text-gray-600 font-medium">Company</TableHead>
+                        <TableHead className="text-gray-600 font-medium text-right">Status</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {
-                        allAppliedJobs.length <= 0 ? <span>You haven't applied any job yet.</span> : allAppliedJobs.map((appliedJob) => (
-                            <TableRow key={appliedJob._id}>
-                                <TableCell>{appliedJob?.createdAt?.split("T")[0]}</TableCell>
-                                <TableCell>{appliedJob.job?.title}</TableCell>
-                                <TableCell>{appliedJob.job?.company?.name}</TableCell>
-                                <TableCell className="text-right"><Badge className={`${appliedJob?.status === "rejected" ? 'bg-red-400' : appliedJob.status === 'pending' ? 'bg-gray-400' : 'bg-green-400'}`}>{appliedJob.status.toUpperCase()}</Badge></TableCell>
+                    {allAppliedJobs.length <= 0 ? (
+                        <TableRow>
+                            <TableCell colSpan={4} className="text-center text-gray-500 py-6">
+                                No jobs applied yet
+                            </TableCell>
+                        </TableRow>
+                    ) : (
+                        allAppliedJobs.map((appliedJob) => (
+                            <TableRow key={appliedJob._id} className="border-b border-gray-100 hover:bg-gray-100 transition-colors">
+                                <TableCell className="text-gray-800">
+                                    {appliedJob?.createdAt?.split("T")[0]}
+                                </TableCell>
+                                <TableCell className="text-gray-800">
+                                    {appliedJob.job?.title}
+                                </TableCell>
+                                <TableCell className="text-gray-800">
+                                    {appliedJob.job?.company?.name}
+                                </TableCell>
+                                <TableCell className="text-right">
+                                    <Badge
+                                        className={`inline-flex items-center px-2 py-1 text-xs font-medium rounded-md ${
+                                            appliedJob?.status === "rejected"
+                                                ? 'bg-red-100 text-red-700'
+                                                : appliedJob.status === 'pending'
+                                                ? 'bg-gray-100 text-gray-700'
+                                                : 'bg-green-100 text-green-700'
+                                        }`}
+                                    >
+                                        {appliedJob.status.toUpperCase()}
+                                    </Badge>
+                                </TableCell>
                             </TableRow>
                         ))
-                    }
+                    )}
                 </TableBody>
             </Table>
         </div>
-    )
-}
+    );
+};
 
-export default AppliedJobTable
+export default AppliedJobTable;

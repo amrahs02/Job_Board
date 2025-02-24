@@ -8,7 +8,7 @@ export const postJob = async (req, res) => {
 
         if (!title || !description || !requirements || !salary || !location || !jobType || !experience || !position || !companyId) {
             return res.status(400).json({
-                message: "Somethin is missing.",
+                message: "Please fill all the input fields.",
                 success: false
             })
         };
@@ -33,6 +33,7 @@ export const postJob = async (req, res) => {
         console.log(error);
     }
 }
+
 // student k liye
 export const getAllJobs = async (req, res) => {
     try {
@@ -78,6 +79,7 @@ export const getJobById = async (req, res) => {
         console.log(error);
     }
 }
+
 // admin kitne job create kra hai abhi tk
 export const getAdminJobs = async (req, res) => {
     try {
