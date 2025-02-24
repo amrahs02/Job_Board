@@ -33,11 +33,20 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-green-400 mx-1 mb-1 p-2 rounded-3xl shadow-md sticky top-0 z-10">
+    <nav
+      className="bg-green-200 mx-1 mb-1 p-2 rounded-3xl shadow-md sticky top-0 z-10"
+      style={{
+        backgroundImage: `url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%23e5e7eb" fill-opacity="0.2"%3E%3Crect x="0" y="0" width="10" height="10" /%3E%3Crect x="10" y="10" width="10" height="10" /%3E%3C/g%3E%3C/svg%3E')`,
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between relative">
         {/* Logo - Mimicking the playful header */}
-        <div className="absolute top-2 left-4 bg-yellow-400 text-green-800 text-lg font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-          Job Portal
+        <div
+          // redirect to homepage
+          onClick={() => navigate("/")}
+          className="absolute top-2 left-4 bg-green-300 text-green-800 text-xl font-medium px-3 py-1 rounded-tl-lg rounded-br-lg"
+        >
+          JobBoard
         </div>
         <h1 className="text-2xl font-bold text-gray-900">
           {/* <Link to="/">Job<span className="text-blue-500">Board</span></Link> */}
@@ -95,15 +104,16 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/admin/companies"
-                    className="hover:text-gray-900 transition-colors"
+                    className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]"
                   >
                     Companies
                   </Link>
                 </li>
+
                 <li>
                   <Link
                     to="/admin/jobs"
-                    className="hover:text-gray-900 transition-colors"
+                    className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]"
                   >
                     Jobs
                   </Link>
@@ -112,14 +122,17 @@ const Navbar = () => {
             ) : (
               <>
                 <li>
-                  <Link to="/" className="hover:text-gray-900 transition-colors">
+                  <Link
+                    to="/"
+                    className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/jobs"
-                    className="hover:text-gray-900 transition-colors"
+                    className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]"
                   >
                     Jobs
                   </Link>
@@ -127,7 +140,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     to="/browse"
-                    className="hover:text-gray-900 transition-colors"
+                    className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]"
                   >
                     Browse
                   </Link>
@@ -142,13 +155,13 @@ const Navbar = () => {
               <Link to="/login">
                 <Button
                   variant="ghost"
-                  className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2"
+                  className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]"
                 >
                   Login
                 </Button>
               </Link>
               <Link to="/signup">
-                <Button className="bg-green-500 text-white hover:bg-green-600 rounded-full px-4 py-2">
+                <Button className="hover:text-gray-900 bg-green-300 p-3 rounded-md border-2 border-black transition-colors duration-300 ease-in-out shadow-[4px_4px_0_0_rgba(192,132,252,0.5)]">
                   Signup
                 </Button>
               </Link>

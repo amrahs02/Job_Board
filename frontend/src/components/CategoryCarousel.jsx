@@ -29,7 +29,7 @@ const CategoryCarousel = () => {
   };
 
   return (
-    <div className="py-12 bg-yellow-100">
+    <div className="py-12 bg-yellow-50">
       <div className="max-w-5xl mx-auto px-4 relative">
         {/* Header Tag - Mimicking "Job Portal" */}
         <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">

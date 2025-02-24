@@ -3,7 +3,7 @@ import Navbar from "./shared/Navbar";
 import FilterCard from "./FilterCard";
 import Job from "./Job";
 import { useSelector } from "react-redux";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; // Import Framer Motion for animations
 import { FaFilter } from "react-icons/fa";
 
 const Jobs = () => {
@@ -26,46 +26,82 @@ const Jobs = () => {
     }
   }, [allJobs, searchedQuery]);
 
+  // Button size and style constants for symmetry
+  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
+
+  // Animation variants for Framer Motion
+  const fadeInVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  const slideInVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
-    <div>
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <div className="w-3/4 border border-b-gray-400 rounded-2xl bg-white mx-auto m-5 px-4">
+      <motion.div 
+        className="w-3/4 border border-gray-300 rounded-3xl bg-yellow-50 mx-auto m-5 px-4 shadow-md bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.1%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInVariants}
+      >
         <div className="flex flex-col m-2 md:flex-row gap-5 relative">
+          {/* Header Tag - Mimicking "Job Categories" */}
+          <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
+            Job Listings
+          </div>
+
           {/* Toggle Filter Button */}
-          <button
+          <motion.button
             onClick={() => setIsFilterVisible(!isFilterVisible)}
-            className="px-4 py-2 bg-blue-200 text-blue-500 h-fit rounded-full sm:m-0 mt-2"
+            className={buttonClasses}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
           >
-            <FaFilter className=" mr-2 inline" />
+            <FaFilter className="mr-2 inline" />
             Filter Jobs
-          </button>
+          </motion.button>
 
           {/* Sliding Filter Panel */}
-          <div
+          <motion.div
             className={`fixed top-0 left-0 z-20 bg-white shadow-2xl h-full w-3/4 md:w-1/6 transition-transform duration-500 ${
               isFilterVisible ? "translate-x-0" : "-translate-x-full"
             }`}
+            initial="hidden"
+            animate={isFilterVisible ? "visible" : "hidden"}
+            variants={slideInVariants}
           >
             <div className="relative">
               {/* Close Button inside the filter panel */}
-              <button
+              <motion.button
                 onClick={() => setIsFilterVisible(false)}
-                className="absolute top-4 right-4 px-4 py-2 bg-gray-200 rounded-2xl hover:bg-gray-300"
+                className={`${buttonClasses.replace("bg-green-500", "bg-gray-200").replace("hover:bg-green-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")} absolute top-4 right-4`}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInVariants}
               >
                 X
-              </button>
+              </motion.button>
               <FilterCard />
             </div>
-          </div>
+          </motion.div>
 
           {/* Main Content */}
-          <div
+          <motion.div
             className={`flex-1 h-[88vh] overflow-y-auto pb-5 ${
               isFilterVisible ? "opacity-50 pointer-events-none md:pointer-events-auto" : ""
             }`}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInVariants}
           >
             {filterJobs.length <= 0 ? (
-              <span className="text-center md:text-left">Job not found</span>
+              <span className="text-center md:text-left text-gray-600">Job not found</span>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {filterJobs.map((job) => (
@@ -81,9 +117,9 @@ const Jobs = () => {
                 ))}
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
