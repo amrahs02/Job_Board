@@ -64,11 +64,7 @@ const Login = () => {
   }, [user, navigate]);
 
   // Button size and style constants for symmetry
-<<<<<<< HEAD
-  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
-=======
   const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 ease-in-out hover:shadow-lg";
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
   // Animation variants for Framer Motion
   const fadeInVariants = {
@@ -80,11 +76,7 @@ const Login = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <motion.div 
-<<<<<<< HEAD
-        className="flex bg-green-200 mx-2 rounded-3xl items-center justify-center flex-grow bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.2%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
-=======
         className="flex bg-emerald-200 mx-2 rounded-3xl items-center justify-center flex-grow bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.2%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
         initial="hidden"
         animate="visible"
         variants={fadeInVariants}
@@ -97,11 +89,7 @@ const Login = () => {
           variants={fadeInVariants}
         >
           {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-          <div className="absolute top-24 left-8 bg-yellow-400 text-green-800 text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
           <div className="absolute top-24 left-8 bg-yellow-400 text-emerald-800 text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             Login
           </div>
 
@@ -114,11 +102,7 @@ const Login = () => {
               name="email"
               onChange={changeEventHandler}
               placeholder="Enter Your Email"
-<<<<<<< HEAD
-              className="mt-1 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="mt-1 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             />
           </div>
           <div className="mb-4">
@@ -129,11 +113,7 @@ const Login = () => {
               name="password"
               onChange={changeEventHandler}
               placeholder="Enter Your Password"
-<<<<<<< HEAD
-              className="mt-1 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="mt-1 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             />
           </div>
           <div className="mb-6">
@@ -146,11 +126,7 @@ const Login = () => {
                   value="student"
                   checked={input.role === "student"}
                   onChange={changeEventHandler}
-<<<<<<< HEAD
-                  className="cursor-pointer h-5 w-5 border-gray-300 text-green-600 focus:ring-green-500"
-=======
                   className="cursor-pointer h-5 w-5 border-gray-300 text-emerald-600 focus:ring-emerald-500"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                 />
                 <Label htmlFor="r1" className="ml-2 text-gray-700">Student</Label>
               </div>
@@ -161,11 +137,7 @@ const Login = () => {
                   value="recruiter"
                   checked={input.role === "recruiter"}
                   onChange={changeEventHandler}
-<<<<<<< HEAD
-                  className="cursor-pointer h-5 w-5 border-gray-300 text-green-600 focus:ring-green-500"
-=======
                   className="cursor-pointer h-5 w-5 border-gray-300 text-emerald-600 focus:ring-emerald-500"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                 />
                 <Label htmlFor="r2" className="ml-2 text-gray-700">Recruiter</Label>
               </div>
@@ -185,11 +157,7 @@ const Login = () => {
           </motion.div>
           <p className="text-sm text-center text-gray-600 mt-4">
             Don't have an account? 
-<<<<<<< HEAD
-            <Link to="/signup" className="text-green-600 hover:underline ml-1">Signup</Link>
-=======
             <Link to="/signup" className="text-emerald-600 hover:underline ml-1">Signup</Link>
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
           </p>
           <div className="mt-6 text-center">
             <p className="text-gray-500 text-sm">Test Credentials:</p>
@@ -198,11 +166,7 @@ const Login = () => {
                 <p className="text-gray-600 text-sm">Email: <strong>test@gmail.com</strong> | Password: <strong>test</strong></p>
                 <motion.button
                   type="button"
-<<<<<<< HEAD
-                  className={buttonClasses.replace("bg-green-500", "bg-gray-200").replace("hover:bg-green-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")}
-=======
                   className={buttonClasses.replace("bg-emerald-500", "bg-gray-200").replace("hover:bg-emerald-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")}
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                   onClick={() => fillTestCredentials("test@gmail.com", "test", "student")}
                   initial="hidden"
                   animate="visible"
@@ -216,11 +180,7 @@ const Login = () => {
                 <p className="text-gray-600 text-sm">Email: <strong>admin@gmail.com</strong> | Password: <strong>admin</strong></p>
                 <motion.button
                   type="button"
-<<<<<<< HEAD
-                  className={buttonClasses.replace("bg-green-500", "bg-gray-200").replace("hover:bg-green-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")}
-=======
                   className={buttonClasses.replace("bg-emerald-500", "bg-gray-200").replace("hover:bg-emerald-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")}
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                   onClick={() => fillTestCredentials("admin@gmail.com", "admin", "recruiter")}
                   initial="hidden"
                   animate="visible"

@@ -27,11 +27,7 @@ const Jobs = () => {
   }, [allJobs, searchedQuery]);
 
   // Button size and style constants for symmetry
-<<<<<<< HEAD
-  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
-=======
   const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 ease-in-out hover:shadow-lg";
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
   // Animation variants for Framer Motion
   const fadeInVariants = {
@@ -55,11 +51,7 @@ const Jobs = () => {
       >
         <div className="flex flex-col m-2 md:flex-row gap-5 relative">
           {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-          <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
           <div className="absolute top-4 left-4 bg-emerald-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             Job Listings
           </div>
 
@@ -88,11 +80,7 @@ const Jobs = () => {
               {/* Close Button inside the filter panel */}
               <motion.button
                 onClick={() => setIsFilterVisible(false)}
-<<<<<<< HEAD
-                className={`${buttonClasses.replace("bg-green-500", "bg-gray-200").replace("hover:bg-green-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")} absolute top-4 right-4`}
-=======
                 className={`${buttonClasses.replace("bg-emerald-500", "bg-gray-200").replace("hover:bg-emerald-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")} absolute top-4 right-4`}
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                 initial="hidden"
                 animate="visible"
                 variants={fadeInVariants}

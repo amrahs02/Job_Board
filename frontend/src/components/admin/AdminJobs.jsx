@@ -35,11 +35,7 @@ const AdminJobs = () => {
         variants={fadeInVariants}
       >
         {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-        <div className="absolute top-24 left-6 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
         <div className="absolute top-24 left-6 bg-emerald-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
           Admin Jobs
         </div>
 
@@ -51,11 +47,7 @@ const AdminJobs = () => {
             variants={fadeInVariants}
           >
             <Input
-<<<<<<< HEAD
-              className="w-full max-w-md px-4 py-2 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="w-full max-w-md px-4 py-2 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               placeholder="Filter by name, role"
               onChange={(e) => setInput(e.target.value)}
             />
@@ -67,11 +59,7 @@ const AdminJobs = () => {
           >
             <Button 
               onClick={() => navigate("/admin/jobs/create")}
-<<<<<<< HEAD
-              className="bg-green-500 text-white hover:bg-green-600 rounded-full px-6 py-2 transition-colors duration-200 shadow-md transform hover:scale-105"
-=======
               className="bg-emerald-500 text-white hover:bg-emerald-600 rounded-full px-6 py-2 transition-colors duration-200 shadow-md transform hover:scale-105"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             >
               New Jobs
             </Button>

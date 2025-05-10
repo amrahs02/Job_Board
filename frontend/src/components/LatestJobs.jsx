@@ -20,20 +20,12 @@ const LatestJobs = () => {
       variants={fadeInVariants}
     >
       {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-      <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
       <div className="absolute top-4 left-4 bg-emerald-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
         Latest Jobs
       </div>
 
       <motion.h1 
-<<<<<<< HEAD
-        className="text-6xl font-bold text-center mb-8 bg-gradient-to-r from-green-500 via-yellow-400 to-green-600 bg-clip-text text-transparent"
-=======
         className="text-6xl font-bold text-center mb-8 bg-gradient-to-r from-emerald-500 via-yellow-400 to-emerald-600 bg-clip-text text-transparent"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
         initial="hidden"
         animate="visible"
         variants={fadeInVariants}

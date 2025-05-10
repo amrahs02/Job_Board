@@ -71,11 +71,7 @@ const Signup = () => {
   }, [user, navigate]);
 
   // Button size and style constants for symmetry
-<<<<<<< HEAD
-  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
-=======
   const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 ease-in-out hover:shadow-lg";
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
   // Animation variants for Framer Motion
   const fadeInVariants = {
@@ -87,11 +83,7 @@ const Signup = () => {
     <div className="min-h-screen bg-white">
       <Navbar />
       <motion.div 
-<<<<<<< HEAD
-        className="flex mx-2 rounded-3xl bg-green-200 items-center justify-center flex-1 bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.2%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
-=======
         className="flex mx-2 rounded-3xl bg-emerald-200 items-center justify-center flex-1 bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.2%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
         initial="hidden"
         animate="visible"
         variants={fadeInVariants}
@@ -104,11 +96,7 @@ const Signup = () => {
           variants={fadeInVariants}
         >
           {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-          <div className="absolute top-24 left-8 bg-yellow-400 text-green-800 text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
           <div className="absolute top-24 left-8 bg-yellow-400 text-emerald-800 text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             Sign Up
           </div>
 
@@ -124,11 +112,7 @@ const Signup = () => {
               name="fullname"
               onChange={changeEventHandler}
               placeholder="Enter Your Full Name"
-<<<<<<< HEAD
-              className="mt-1 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="mt-1 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               required
             />
           </div>
@@ -143,11 +127,7 @@ const Signup = () => {
               name="email"
               onChange={changeEventHandler}
               placeholder="Enter Your Email"
-<<<<<<< HEAD
-              className="mt-1 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="mt-1 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               required
             />
           </div>
@@ -162,11 +142,7 @@ const Signup = () => {
               name="phoneNumber"
               onChange={changeEventHandler}
               placeholder="Enter Your Phone Number"
-<<<<<<< HEAD
-              className="mt-1 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="mt-1 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               required
             />
           </div>
@@ -181,11 +157,7 @@ const Signup = () => {
               name="password"
               onChange={changeEventHandler}
               placeholder="Enter Your Password"
-<<<<<<< HEAD
-              className="mt-1 rounded-full border-gray-300 focus:border-green-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
-=======
               className="mt-1 rounded-full border-gray-300 focus:border-emerald-500 focus:ring-0 text-gray-700 placeholder-gray-500 shadow-md transition-all duration-200"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               required
             />
           </div>
@@ -203,11 +175,7 @@ const Signup = () => {
                     value="student"
                     checked={input.role === "student"}
                     onChange={changeEventHandler}
-<<<<<<< HEAD
-                    className="cursor-pointer h-5 w-5 border-gray-300 text-green-600 focus:ring-green-500"
-=======
                     className="cursor-pointer h-5 w-5 border-gray-300 text-emerald-600 focus:ring-emerald-500"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                   />
                   <Label htmlFor="r1" className="ml-3 text-gray-700 font-medium">Student</Label>
                 </div>
@@ -218,11 +186,7 @@ const Signup = () => {
                     value="recruiter"
                     checked={input.role === "recruiter"}
                     onChange={changeEventHandler}
-<<<<<<< HEAD
-                    className="cursor-pointer h-5 w-5 border-gray-300 text-green-600 focus:ring-green-500"
-=======
                     className="cursor-pointer h-5 w-5 border-gray-300 text-emerald-600 focus:ring-emerald-500"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                   />
                   <Label htmlFor="r2" className="ml-3 text-gray-700 font-medium">Recruiter</Label>
                 </div>
@@ -243,11 +207,7 @@ const Signup = () => {
                   accept="image/*"
                   type="file"
                   onChange={changeFileHandler}
-<<<<<<< HEAD
-                  className="cursor-pointer rounded-full px-4 py-2 border border-gray-300 bg-gray-50 text-gray-700 focus:ring-green-500 focus:border-green-500"
-=======
                   className="cursor-pointer rounded-full px-4 py-2 border border-gray-300 bg-gray-50 text-gray-700 focus:ring-emerald-500 focus:border-emerald-500"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                 />
               </motion.div>
             </div>
@@ -261,11 +221,7 @@ const Signup = () => {
           >
             {loading ? (
               <Button 
-<<<<<<< HEAD
-                className={buttonClasses.replace("bg-green-500", "bg-gray-200").replace("hover:bg-green-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")}
-=======
                 className={buttonClasses.replace("bg-emerald-500", "bg-gray-200").replace("hover:bg-emerald-600", "hover:bg-gray-300").replace("text-white", "text-gray-700")}
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               >
                 <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Please wait
               </Button>
@@ -282,11 +238,7 @@ const Signup = () => {
           <div className="text-center">
             <span className="text-sm text-gray-600">
               Already have an account?
-<<<<<<< HEAD
-              <Link to="/login" className="text-green-600 font-semibold hover:underline ml-1"> Login</Link>
-=======
               <Link to="/login" className="text-emerald-600 font-semibold hover:underline ml-1"> Login</Link>
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             </span>
           </div>
         </motion.form>

@@ -33,11 +33,7 @@ const Browse = () => {
         variants={fadeInVariants}
       >
         {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-        <div className="absolute top-20 left-5 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
         <div className="absolute top-20 left-5 bg-emerald-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
           Browse Jobs
         </div>
 

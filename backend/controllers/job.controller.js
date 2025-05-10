@@ -80,11 +80,7 @@ export const getJobById = async (req, res) => {
     }
 }
 
-<<<<<<< HEAD
-// admin kitne job create kra hai abhi tk
-=======
 // admin kitne job create kiya hai abhi tk
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 export const getAdminJobs = async (req, res) => {
     try {
         const adminId = req.id;

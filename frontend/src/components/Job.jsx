@@ -23,11 +23,7 @@ const Job = ({ job }) => {
   };
 
   // Button size and style constants for symmetry
-<<<<<<< HEAD
-  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
-=======
   const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 ease-in-out hover:shadow-lg";
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
   return (
     <motion.div 
@@ -48,11 +44,7 @@ const Job = ({ job }) => {
       {/* Company Information */}
       <div className="flex justify-between items-start mb-6">
         <div className="flex items-center">
-<<<<<<< HEAD
-          <Button className="rounded-full aspect-square w-12 h-12 mr-4 bg-green-500 shadow-md hover:bg-green-600 transition-all duration-300">
-=======
           <Button className="rounded-full aspect-square w-12 h-12 mr-4 bg-emerald-500 shadow-md hover:bg-emerald-600 transition-all duration-300">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
             <Avatar className="w-full h-full">
               <AvatarImage src={job?.company?.logo} />
             </Avatar>
@@ -92,11 +84,7 @@ const Job = ({ job }) => {
         <Button
           onClick={() => navigate(`/description/${job?._id}`)}
           variant="outline"
-<<<<<<< HEAD
-          className={`${buttonClasses.replace("bg-green-500", "bg-white").replace("hover:bg-green-600", "hover:bg-gray-100").replace("text-white", "text-gray-700")} border-gray-300`}
-=======
           className={`${buttonClasses.replace("bg-emerald-500", "bg-white").replace("hover:bg-emerald-600", "hover:bg-gray-100").replace("text-white", "text-gray-700")} border-gray-300`}
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
         >
           Details
         </Button>

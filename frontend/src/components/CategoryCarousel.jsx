@@ -24,11 +24,7 @@ const CategoryCards = () => {
   };
 
   // Button size and style constants for symmetry
-<<<<<<< HEAD
-  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
-=======
   const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 ease-in-out hover:shadow-lg";
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
   // Animation variants for Framer Motion
   const fadeInVariants = {
@@ -73,20 +69,12 @@ const CategoryCards = () => {
     >
       <div className="max-w-5xl mx-auto px-4 relative">
         {/* Header Tag - Mimicking "Job Portal" */}
-<<<<<<< HEAD
-        <div className="absolute top-4 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
         <div className="absolute top-4 left-4 bg-emerald-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
           Job Categories
         </div>
 
         <motion.h2 
-<<<<<<< HEAD
-          className="text-6xl font-bold text-center mb-8 bg-gradient-to-r from-green-500 via-yellow-400 to-green-600 bg-clip-text text-transparent"
-=======
           className="text-6xl font-bold text-center mb-8 bg-gradient-to-r from-emerald-500 via-yellow-400 to-emerald-600 bg-clip-text text-transparent"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
           initial="hidden"
           animate="visible"
           variants={fadeInVariants}
@@ -97,11 +85,7 @@ const CategoryCards = () => {
           {category.map((cat, index) => (
             <motion.div
               key={index}
-<<<<<<< HEAD
-              className="bg-white rounded-3xl p-6 border border-green-300 shadow-md transform -translate-y-2 hover:shadow-xl transition-all duration-300"
-=======
               className="bg-white rounded-3xl p-6 border border-emerald-300 shadow-md transform -translate-y-2 hover:shadow-xl transition-all duration-300"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               initial="hidden"
               animate="visible"
               variants={{
@@ -117,11 +101,7 @@ const CategoryCards = () => {
             >
               <Button
                 onClick={() => searchJobHandler(cat)}
-<<<<<<< HEAD
-                className={buttonClasses.replace("bg-green-500", "bg-white").replace("hover:bg-green-600", "hover:bg-green-100").replace("text-white", "text-gray-700")}
-=======
                 className={buttonClasses.replace("bg-emerald-500", "bg-white").replace("hover:bg-emerald-600", "hover:bg-emerald-100").replace("text-white", "text-gray-700")}
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
               >
                 {cat}
               </Button>

@@ -38,11 +38,7 @@ const LatestJobCards = ({ job }) => {
   return (
     <motion.div
       onClick={() => navigate(`/description/${job._id}`)}
-<<<<<<< HEAD
-      className="p-6 rounded-3xl bg-white border border-green-300 shadow-md cursor-pointer bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.1%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat hover:shadow-xl transition-all duration-300"
-=======
       className="p-6 rounded-3xl bg-white border border-emerald-300 shadow-md cursor-pointer bg-[url('data:image/svg+xml,%3Csvg width=%2220%22 height=%2220%22 viewBox=%220 0 20 20%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22%23e5e7eb%22 fill-opacity=%220.1%22%3E%3Crect x=%220%22 y=%220%22 width=%2210%22 height=%2210%22 /%3E%3Crect x=%2210%22 y=%2210%22 width=%2210%22 height=%2210%22 /%3E%3C/g%3E%3C/svg%3E')] bg-[length:20px_20px] bg-repeat hover:shadow-xl transition-all duration-300"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.3 }}

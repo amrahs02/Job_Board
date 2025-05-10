@@ -19,11 +19,7 @@ const Profile = () => {
   const { user } = useSelector((store) => store.auth);
 
   // Button size and style constants for symmetry
-<<<<<<< HEAD
-  const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-green-500 text-white hover:bg-green-600 transition-all duration-300 ease-in-out hover:shadow-lg";
-=======
   const buttonClasses = "h-12 px-6 text-sm font-medium rounded-full shadow-md bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 ease-in-out hover:shadow-lg";
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
   // Animation variants for Framer Motion
   const fadeInVariants = {
@@ -41,11 +37,7 @@ const Profile = () => {
         variants={fadeInVariants}
       >
         {/* Header Tag - Mimicking "Job Categories" */}
-<<<<<<< HEAD
-        <div className="absolute top-20 left-4 bg-green-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
-=======
         <div className="absolute top-20 left-4 bg-emerald-500 text-white text-sm font-medium px-3 py-1 rounded-tl-lg rounded-br-lg">
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
           My Profile
         </div>
 
@@ -104,11 +96,7 @@ const Profile = () => {
                 user?.profile?.skills.map((item, index) => (
                   <Badge
                     key={index}
-<<<<<<< HEAD
-                    className="bg-green-100 text-green-700 px-2 py-1 text-xs rounded-full"
-=======
                     className="bg-emerald-100 text-emerald-700 px-2 py-1 text-xs rounded-full"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                   >
                     {item}
                   </Badge>
@@ -125,11 +113,7 @@ const Profile = () => {
                 <a
                   target="_blank"
                   href={user?.profile?.resume}
-<<<<<<< HEAD
-                  className="text-green-600 hover:text-green-700 text-sm underline transition-colors"
-=======
                   className="text-emerald-600 hover:text-emerald-700 text-sm underline transition-colors"
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                 >
                   {user?.profile?.resumeOriginalName || "Resume"}
                 </a>

@@ -8,30 +8,18 @@ export const register = async (req, res) => {
   try {
     const { fullname, email, phoneNumber, password, role } = req.body;
 
-<<<<<<< HEAD
-    if (!fullname || !email || !phoneNumber || !password || !role) {
-=======
     if (!fullname || !email || !phoneNumber || !password) {
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
       return res.status(400).json({
         message: "Something is missing",
         success: false,
       });
     }
-<<<<<<< HEAD
-    const file = req.file;
-    // console.log(req.file);
-    const fileUri = getDataUri(file);
-    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-
-=======
     // image upload
     const file = req.file;
     const fileUri = getDataUri(file);
     const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
 
     // check if user already exist
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
     const user = await User.findOne({ email });
     if (user) {
       return res.status(400).json({
@@ -39,10 +27,7 @@ export const register = async (req, res) => {
         success: false,
       });
     }
-<<<<<<< HEAD
-=======
     // bcrypt password or hash password
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await User.create({
@@ -101,11 +86,7 @@ export const login = async (req, res) => {
       userId: user._id,
     };
     const token = await jwt.sign(tokenData, process.env.SECRET_KEY, {
-<<<<<<< HEAD
-      expiresIn: "1d",
-=======
       expiresIn: "5d",
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
     });
 
     user = {
@@ -150,13 +131,8 @@ export const updateProfile = async (req, res) => {
 
     const file = req.file;
     // cloudinary ka code
-<<<<<<< HEAD
-    const fileUri = getDataUri(file);
-    const cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-=======
     const fileUri = getDataUri(file); // Here we are using datauri to convert the file to base64 and get the content of the file
     const cloudResponse = await cloudinary.uploader.upload(fileUri.content); // Here we are uploading the file to cloudinary and getting the response as cloudResponse
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
 
     let skillsArray;
     if (skills) {
@@ -171,11 +147,7 @@ export const updateProfile = async (req, res) => {
         success: false,
       });
     }
-<<<<<<< HEAD
-    // updating data
-=======
     // Here we are updating the user profile with the data we got from the request body
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
     if (fullname) user.fullname = fullname;
     if (email) user.email = email;
     if (phoneNumber) user.phoneNumber = phoneNumber;
@@ -188,16 +160,11 @@ export const updateProfile = async (req, res) => {
       user.profile.resumeOriginalName = file.originalname; // Save the original file name
     }
 
-<<<<<<< HEAD
-    await user.save();
-
-=======
     // here we are saving the user data to the database
     await user.save();
 
     // Here we are sending the user data back to the client
     // after updating the profile
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
     user = {
       _id: user._id,
       fullname: user.fullname,

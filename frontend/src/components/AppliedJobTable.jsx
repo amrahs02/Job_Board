@@ -46,11 +46,7 @@ const AppliedJobTable = () => {
                                                 ? 'bg-red-100 text-red-700'
                                                 : appliedJob.status === 'pending'
                                                 ? 'bg-gray-100 text-gray-700'
-<<<<<<< HEAD
-                                                : 'bg-green-100 text-green-700'
-=======
                                                 : 'bg-emerald-100 text-emerald-700'
->>>>>>> 74b4927 (initialize frontend and backend structure with essential configurations and components)
                                         }`}
                                     >
                                         {appliedJob.status.toUpperCase()}
